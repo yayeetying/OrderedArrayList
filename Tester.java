@@ -42,10 +42,6 @@ public class Tester {
       System.out.print(ape.add(i));
     }
     System.out.println();
-    for (Integer element: ape) {
-      System.out.print("" + ape.get(element) + " ");
-    }
-    System.out.println();
     try {
       ape.add(100, 50); //trying to add 50 to index 100
     }
@@ -59,7 +55,30 @@ public class Tester {
     catch (IllegalArgumentException e) {
       System.out.println("ay gratz you got the IllegalArgumentException");
     }
+    for (Integer element: ape) {
+      System.out.print("" + ape.get(element) + " ");
+    }
+    System.out.println();
+    System.out.println(ape.set(5, 100));
+    System.out.println(ape.set(9, 1000));
+    try {
+      ape.set(9, null);
+    }
+    catch (IllegalArgumentException e) {
+      System.out.println("ay gratz you got the IllegalArgumentException");
+    }
 
-    
+    try {
+      ape.set(1, null);
+    }
+    catch (IllegalArgumentException e) {
+      System.out.println("ay gratz you got the IllegalArgumentException");
+    }
+    for (int i = 0; i < ape.size(); i++) {
+      System.out.print("" + ape.get(i) + " ");
+    }
+    System.out.println();
+
+
   }
 }
