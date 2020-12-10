@@ -121,5 +121,19 @@ public class Tester {
     System.out.println(pop.toString());
 
     System.out.println(hebi);
+    System.out.print(hebi.add(0));
+    hebi.add(3, -1);
+    System.out.print(hebi.add(100));
+    hebi.add(0, 120);
+    System.out.print(hebi.add(12));
+    hebi.add(3, 84);
+    System.out.print(hebi.add(-1));
+    System.out.print(hebi.add(120));
+    hebi.add(hebi.size(), 120);
+    hebi.add(0, 120);
+    hebi.add(0, -1);
+    hebi.add(hebi.size(), -1);
+    System.out.println();
+    System.out.println(hebi.toString());
   }
 }
