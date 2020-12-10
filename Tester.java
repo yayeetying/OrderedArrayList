@@ -82,11 +82,30 @@ public class Tester {
     System.out.println("~~~~~~~~~~~~~~~");
     System.out.println();
 
-    OrderedArrayList<String> hebi = new OrderedArrayList<>();
+    OrderedArrayList<Integer> hebi = new OrderedArrayList<>();
     System.out.println(hebi.size());
-    
+//12 21 84 90 3 89 41 239 0 34 8 12 3 9 48 -90
+    System.out.print(hebi.add(12));
+    System.out.print(hebi.add(84));
+    System.out.print(hebi.add(21));
+    System.out.print(hebi.add(90));
+    System.out.print(hebi.add(3));
+    System.out.println();
+    System.out.println(hebi.toString());
+    try {
+      hebi.add(null);
+    }
+    catch (IllegalArgumentException e) {
+      System.out.println("ay gratz you got the IllegalArgumentException");
+    }
 
-
-
+    OrderedArrayList<String> pop = new OrderedArrayList<>();
+    System.out.print(pop.add("z"));
+    System.out.print(pop.add("apple"));
+    System.out.print(pop.add("queue"));
+    System.out.print(pop.add("a"));
+    System.out.print(pop.add("app"));
+    System.out.println();
+    System.out.println(pop.toString());
   }
 }
