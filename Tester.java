@@ -95,8 +95,8 @@ public class Tester {
     try {
       hebi.add(null);
     }
-    catch (IllegalArgumentException e) {
-      System.out.println("ay gratz you got the IllegalArgumentException");
+    catch (NullPointerException e) {
+      System.out.println("don't make me compareTo a null");
     }
 
     OrderedArrayList<String> pop = new OrderedArrayList<>();
@@ -107,5 +107,19 @@ public class Tester {
     System.out.print(pop.add("app"));
     System.out.println();
     System.out.println(pop.toString());
+
+    try {
+      pop.add(4, null);
+    }
+    catch (NullPointerException e) {
+      System.out.println("don't make me compareTo a null");
+    }
+
+    pop.add(3, "asdajhdas hdasjhhjsa");
+    pop.add(3, "poppy");
+    pop.add(0, "zzzzzzz");
+    System.out.println(pop.toString());
+
+    System.out.println(hebi);
   }
 }

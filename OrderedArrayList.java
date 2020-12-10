@@ -9,6 +9,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super(startingCapacity);
   }
 
+  //not what the prompt was asking for... ):
   private void sorter() {
     for (int i = 1; i < size(); i++) {
       int j = i;
@@ -21,11 +22,29 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     }
   }
 
+  private int findIndexer(T element) {
+    if (size() == 0) return 0;
+    for (int i = 0; i < size()-1; i++) {
+      if (element.compareTo(get(i)) > 0 && element.compareTo(get(i+1)) < 0) {
+        return i+1;
+      }
+    }
+    if (element.compareTo(get(0)) <= 0) return 0;
+    else {return size();}
+  }
+
   //overriding NoNullArrayList's add methods
   public boolean add(T element) {
-    super.add(element);
-    sorter();
+    int realIndex = findIndexer(element);
+    super.add(realIndex, element);
     return true;
   }
+
+  public void add(int index, T element) {
+    int realIndex = findIndexer(element);
+    super.add(realIndex, element);
+  }
+
+
 
 }
