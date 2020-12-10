@@ -19,6 +19,19 @@ public class Tester {
     catch (IllegalArgumentException e) {
       System.out.println("ay gratz you got the IllegalArgumentException");
     }
+    snake.add(1, "woofwoof");
+    snake.add(3, "imposters");
+    snake.add("here?");
+    for (String element: snake) {
+      System.out.print("" + snake.get(snake.indexOf(element)) + " ");
+    }
+    System.out.println();
+    try {
+      snake.add(2, null);
+    }
+    catch (IllegalArgumentException e) {
+      System.out.println("ay gratz you got the IllegalArgumentException");
+    }
 
 
     System.out.println();
@@ -33,5 +46,20 @@ public class Tester {
       System.out.print("" + ape.get(element) + " ");
     }
     System.out.println();
+    try {
+      ape.add(100, 50); //trying to add 50 to index 100
+    }
+    catch (IndexOutOfBoundsException e) {
+      System.out.println("ay gratz you got them IndexOutOfBoundsException");
+    }
+
+    try {
+      ape.add(10, null);
+    }
+    catch (IllegalArgumentException e) {
+      System.out.println("ay gratz you got the IllegalArgumentException");
+    }
+
+    
   }
 }

@@ -18,7 +18,15 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     if (element == null) {
       throw new IllegalArgumentException("thou shall not add null into this ArrayList");
     }
-    return super.add(element); //calling ArrayList's .add(element) method
+    return super.add(element); //calling ArrayList's .add(E e) method
+  }
+
+  //ArrayList's prev add threw IndexOutOfBoundsException if (index < 0 || index > size())
+  public void add(int index, T element) {
+    if (element == null) {
+      throw new IllegalArgumentException("thou shall not add null into this ArrayList");
+    }
+    super.add(index, element); //calling ArrayList's .add(int index, E element) method
   }
 
 
