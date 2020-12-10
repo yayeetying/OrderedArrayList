@@ -8,4 +8,4 @@ NoNullArrayList IS an ArrayList; there are no instance variables, just changing 
 
 -2nd constructor: won't have nulls after the filled spaces because startingCapacity
 
--any comparable object has a .compareTo() method;
+-any comparable object has a .compareTo() method; that's why we extend Comparable
