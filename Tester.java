@@ -78,6 +78,14 @@ public class Tester {
       System.out.print("" + ape.get(i) + " ");
     }
     System.out.println();
+    System.out.println();
+    System.out.println("~~~~~~~~~~~~~~~");
+    System.out.println();
+
+    OrderedArrayList<String> hebi = new OrderedArrayList<>();
+    System.out.println(hebi.size());
+    
+
 
 
   }
