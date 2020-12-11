@@ -135,5 +135,18 @@ public class Tester {
     hebi.add(hebi.size(), -1);
     System.out.println();
     System.out.println(hebi.toString());
+    System.out.println(hebi.set(0, 1000));
+    System.out.println(hebi.set(6, 84));
+    System.out.println(hebi.set(11, -11));
+    System.out.println(hebi.set(hebi.size()-1, -27));
+    System.out.println(hebi.toString());
+
+    try {
+      hebi.add(4, null);
+    }
+    catch (NullPointerException e) {
+      System.out.println("don't make me compareTo a null");
+    }
+
   }
 }
