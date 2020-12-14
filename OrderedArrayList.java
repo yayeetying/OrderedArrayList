@@ -36,21 +36,24 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   //Strings are Comparable (lexicography?)
   //overriding NoNullArrayList's add methods
   public boolean add(T element) {
+    if (element == null) return false;
     int realIndex = findIndexer(element);
     super.add(realIndex, element);
     return true;
   }
 
   public void add(int index, T element) {
-    int realIndex = findIndexer(element);
-    super.add(realIndex, element);
+    if (element != null) {
+      int realIndex = findIndexer(element);
+      super.add(realIndex, element);
+    }
   }
 
   //overriding NoNullArrayList's set method
   //remove() the element at index, then add() the new value
   public T set(int index, T element) {
     T removed = remove(index); //inheritted these methods from ArrayList (papa of the papa)
-    add(element);
+    if (element != null) add(element);
     return removed;
   }
 

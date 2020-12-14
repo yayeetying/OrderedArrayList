@@ -147,6 +147,10 @@ public class Tester {
     catch (NullPointerException e) {
       System.out.println("don't make me compareTo a null");
     }
+    System.out.println(hebi.add(null));
+    hebi.add(4, null);
+    System.out.println(hebi.set(0, null));
+    System.out.println(hebi.toString());
 
   }
 }
