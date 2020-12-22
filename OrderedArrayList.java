@@ -25,7 +25,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   private int findIndexer(T element) {
     if (size() == 0) return 0;
     for (int i = 0; i < size()-1; i++) {
-      if (element.compareTo(get(i)) >= 0 && element.compareTo(get(i+1)) <= 0) {
+      if (get(i).compareTo(element) >= 0 && get(i+1).compareTo(element) <= 0) {
         return i+1;
       }
     }
@@ -36,24 +36,21 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   //Strings are Comparable (lexicography?)
   //overriding NoNullArrayList's add methods
   public boolean add(T element) {
-    if (element == null) return false;
     int realIndex = findIndexer(element);
     super.add(realIndex, element);
     return true;
   }
 
-  public void add(int index, T element) {
-    if (element != null) {
+    public void add(int index, T element) {
       int realIndex = findIndexer(element);
       super.add(realIndex, element);
     }
-  }
 
   //overriding NoNullArrayList's set method
   //remove() the element at index, then add() the new value
   public T set(int index, T element) {
     T removed = remove(index); //inheritted these methods from ArrayList (papa of the papa)
-    if (element != null) add(element);
+    add(element);
     return removed;
   }
 
