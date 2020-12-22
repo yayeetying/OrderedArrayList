@@ -152,11 +152,19 @@ public class Tester {
     // System.out.println(hebi.set(0, null));
     System.out.println(hebi.toString());
 
-    OrderedArrayList<String> run = new OrderedArrayList<>();
+    OrderedArrayList<Integer> run = new OrderedArrayList<>();
     try {
       run.add(null);
     }
     catch (IllegalArgumentException e) {
+      System.out.println("thou shall not add a null to this ArrayList");
+    }
+    run.add(10);
+    run.add(-10);
+    try {
+      run.add(null);
+    }
+    catch (NullPointerException e) {
       System.out.println("don't make me compareTo a null");
     }
     System.out.println(run.toString());

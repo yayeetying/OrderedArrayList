@@ -29,7 +29,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         return i+1;
       }
     }
-    if (element.compareTo(get(0)) <= 0) return 0;
+    if (get(0).compareTo(element) <= 0) return 0;
     else {return size();}
   }
 
@@ -37,14 +37,14 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   //overriding NoNullArrayList's add methods
   public boolean add(T element) {
     int realIndex = findIndexer(element);
-    super.add(realIndex, element);
+    super.add(realIndex, element); //NoNullArrayList already deals with the null element problem
     return true;
   }
 
-    public void add(int index, T element) {
-      int realIndex = findIndexer(element);
-      super.add(realIndex, element);
-    }
+  public void add(int index, T element) {
+    int realIndex = findIndexer(element);
+    super.add(realIndex, element);
+  }
 
   //overriding NoNullArrayList's set method
   //remove() the element at index, then add() the new value
