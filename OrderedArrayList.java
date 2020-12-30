@@ -25,11 +25,11 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   private int findIndexer(T element) {
     if (size() == 0) return 0;
     for (int i = 0; i < size()-1; i++) {
-      if (get(i).compareTo(element) >= 0 && get(i+1).compareTo(element) <= 0) {
+      if (get(i).compareTo(element) <= 0 && get(i+1).compareTo(element) >= 0) {
         return i+1;
       }
     }
-    if (get(0).compareTo(element) <= 0) return 0;
+    if (get(0).compareTo(element) >= 0) return 0;
     else {return size();}
   }
 
